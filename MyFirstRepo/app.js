@@ -4,7 +4,7 @@ const port = process.env.PORT || 3000;
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
-  
+
   const html = `
     <!DOCTYPE html>
     <html lang="vi">
@@ -13,8 +13,16 @@ const server = http.createServer((req, res) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Danh sách sinh viên</title>
         <style>
+            body {
+                text-align: center;
+            }
+            h2 {
+                color: red;
+                text-align: center;
+            }
             table {
-                width: 100%;
+                width: 80%;
+                margin: 0 auto; /* Căn giữa bảng */
                 border-collapse: collapse;
             }
             th, td {
@@ -23,7 +31,8 @@ const server = http.createServer((req, res) => {
                 text-align: center;
             }
             th {
-                background-color: #f2f2f2;
+                background-color: #007BFF; /* Màu xanh dương */
+                color: white; /* Chữ màu trắng */
             }
         </style>
     </head>
@@ -46,7 +55,6 @@ const server = http.createServer((req, res) => {
                 <td>oireyou0@gmail.com</td>
                 <td>0939485606</td>
             </tr>
-            
         </table>
     </body>
     </html>
